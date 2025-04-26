@@ -3,27 +3,35 @@
 
 #include <iostream>
 #include <vector>
-#include <numeric>  
-#include <algorithm> 
+#include <numeric>  // Для std::accumulate
+#include <algorithm> // Для std::sort
 
 using namespace std;
 
+// Функция для сложения элементов массива
 int sumArray(const vector<int>& arr) {
+    // std::accumulate складывает все элементы массива, начиная с 0 (третий аргумент)
     return accumulate(arr.begin(), arr.end(), 0);
 }
 
+// Функция для сортировки массива (по возрастанию)
 void sortArray(vector<int>& arr) {
+    // std::sort сортирует элементы массива от начала до конца
     sort(arr.begin(), arr.end());
 }
 
 int main() {
+    // Пример массива целых чисел
     vector<int> numbers = {5, 2, 8, 1, 9, 4};
 
+    // 1. Сложение элементов
     int sum = sumArray(numbers);
     cout << "Сумма элементов массива: " << sum << endl;
 
+    // 2. Сортировка массива
     sortArray(numbers);
 
+    // Вывод отсортированного массива
     cout << "Отсортированный массив: ";
     for (int num : numbers) {
         cout << num << " ";
